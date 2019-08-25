@@ -1,10 +1,8 @@
 //Imports
 const express = require('express');
-const model = require('../models/burger.js');
+const burgers = require('../models/burger.js');
 const router = express.Router();
 
-
-/////////////// NEED TO EDIT BELOW CODE //////////////////////////////////
 
 //Redirect user to /burgers
 router.get("/", function(req, res) {
@@ -14,8 +12,8 @@ router.get("/", function(req, res) {
 //Burgers GET route
 router.get("/burgers", function(req, res) {
     burgers.selectAll(function(data) {
-      var hbsObject = {
-        burgers : data
+      let hbsObject = {
+        burgers: data
       };
       console.log(hbsObject);
       res.render("index", hbsObject);
@@ -33,12 +31,29 @@ router.put("/burgers/update/:id", function(req, res) {
     console.log("condition", condition);
     burgers.updateOne(
       {
-        "devoured": req.body.devoured
+        devoured: req.body.devoured
       },
       condition,
-      function(data) {
-        res.redirect("/burgers");
+      function(result) {
+        if (result.changedRows == 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+        } else {
+          res.status(200).end();
+        }
       });
+  });
+
+  //Burgers DELETE route
+  router.delete("/burgers/:id", function(req, res){
+    let condition = "id = " + req.params.id;
+    burgers.delete(condition, function(result){
+      if (result.affectedRows == 0){
+        return res.status(404).end();
+      }else {
+        res.status(200).end();
+      }
+    });
   });
   
   // Export routes for server.js to use

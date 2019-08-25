@@ -20,12 +20,9 @@ function printQuestionMarks(num) {
       let value = ob[key];
       // check to skip hidden properties
       if (Object.hasOwnProperty.call(ob, key)) {
-        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
         arr.push(key + "=" + value);
       }
     }
@@ -36,7 +33,7 @@ function printQuestionMarks(num) {
   let orm = {
     //selectAll
     selectAll: function(tableInput, cb) {
-      const queryString = "SELECT * FROM " + tableInput + ";";
+      let queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
@@ -47,7 +44,6 @@ function printQuestionMarks(num) {
     //insertOne
     insertOne: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
-    
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
@@ -66,7 +62,7 @@ function printQuestionMarks(num) {
       },
     //updateOne
     updateOne: function (table, objColVals, condition, cb) {
-        const queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
@@ -77,10 +73,22 @@ function printQuestionMarks(num) {
           if (err) {
             throw err;
           }
-    
           cb(result);
         });
-      }
+      },
+    //delete
+    delete: function(table, condition, cb){
+      let queryString = "DELETE FROM " + table;
+      queryString += " WHERE ";
+      queryString += condition;
+
+      connection.query(queryString, function(err, result){
+        if (err){
+          throw err;
+        }
+        cb(result);
+      });
+    }
     };
 
 module.exports = orm;
