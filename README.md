@@ -30,40 +30,34 @@ This project also follows the MVC (Model-View-Controller) design pattern. The MV
   * <b>Model object:</b>
   A model object manages the data. When data is created or changed by the user in the view (for example, a user devours or throws away a burger), that change is communicated via the controller to the model. Also, when data is created or changed in the model, the model communicates that change via the controller to the view, and the view displays the updated data to the user.
 
-For more information about the MVC design pattern, check out the following resources:
-  * https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
-  * https://docs.microsoft.com/en-us/aspnet/core/mvc/overview
-
-## <a name="getting-started"></a> Getting started
+## Getting started
 The following section will take you through the steps of setting up this application and getting it running locally on your computer.
 
 If you don't want to set up this project locally and just want to see the deployed application, go to  https://.
 
 To set up this application locally on your computer, perform the following steps:
-  1. [Clone the repository]
-  2. [Install Node.js]
-  3. [Install the dependencies]
-  4. [Install MySQL Workbench]
-  5. [Set up a development database]
-  6. [Create a .env file to store your MySQL Password]
-  7. [Verify database connection information]
-  8. [Start the server]
+  1. Clone the repository
+  2. Install Node.js
+  3. Install the dependencies
+  4. Install MySQL Workbench
+  5. Set up a development database
+  6. Create a .env file to store your MySQL Password
+  7. Verify database connection information
+  8. Start the server
 
-## <a name="technologies-used"></a> Technologies used to build app
-* [Backend technologies](#Backend)
-* [Frontend technologies](#Frontend)
+## Technologies Used
 
 ### <a name ="Backend"></a> Backend technologies
-* Node.js (https://nodejs.org/en/)
-* MySQL (https://www.mysql.com/)
-* Express (http://expressjs.com/)
-* ORM - Object Relational Mapping (https://en.wikipedia.org/wiki/Object-relational_mapping)
+* Node.js
+* MySQL
+* Express
+* ORM - Object Relational Mapping
 
 
 ### <a name="Frontend"></a> Frontend technologies
 * HTML
 * CSS
-* Bootstrap (http://getbootstrap.com/)
+* Bootstrap
 * Javascript
-* jQuery (https://jquery.com/)
-* Handlebars (http://handlebarsjs.com/)
+* jQuery
+* Handlebars
