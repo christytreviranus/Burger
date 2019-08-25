@@ -4,7 +4,7 @@
 
 
 ## Demo Here:
-https://
+https://limitless-ocean-51543.herokuapp.com/burgers
 
 ## About this project
 
@@ -33,7 +33,7 @@ This project also follows the MVC (Model-View-Controller) design pattern. The MV
 ## Getting started
 The following section will take you through the steps of setting up this application and getting it running locally on your computer.
 
-If you don't want to set up this project locally and just want to see the deployed application, go to  https://.
+If you don't want to set up this project locally and just want to see the deployed application, go to  https://limitless-ocean-51543.herokuapp.com/burgers.
 
 To set up this application locally on your computer, perform the following steps:
   1. Clone the repository
@@ -47,14 +47,14 @@ To set up this application locally on your computer, perform the following steps
 
 ## Technologies Used
 
-### <a name ="Backend"></a> Backend technologies
+### Backend technologies
 * Node.js
 * MySQL
 * Express
 * ORM - Object Relational Mapping
 
 
-### <a name="Frontend"></a> Frontend technologies
+### Frontend technologies
 * HTML
 * CSS
 * Bootstrap
