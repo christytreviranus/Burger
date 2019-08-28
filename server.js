@@ -1,6 +1,6 @@
 //Required packages etc.
 const express = require('express');
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -21,6 +21,6 @@ const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("App now listening at localhost:" + PORT);
+app.listen(process.env.port || 3000, function() {
+  console.log("App now listening at localhost:" + port);
 });
