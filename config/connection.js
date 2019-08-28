@@ -1,6 +1,6 @@
 //MySQL
 const mysql = require('mysql');
-const connection;
+let connection;
 
 //Use Dotenv package
 require("dotenv").config();
